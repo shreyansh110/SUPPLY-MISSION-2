@@ -1,14 +1,14 @@
 class Block{
-constructor(x,y){
+constructor(x,y,width,height){
 var options ={
 
-'restitution': 0.3,
+'restitution': 0.6,
 'friction':0,
 'density':1.0
 }
-this.body=Bodies.rectangle(x,y,40,10,options)
-this.width=40;
-this.height=10;
+this.body=Bodies.rectangle(x,y,width,height,options)
+this.width=width;
+this.height=height;
 World.add(world,this.body);
 
 
@@ -17,10 +17,12 @@ World.add(world,this.body);
 
 
 display(){
+var pos =this.body.position
 push();
+translate(pos.x,pos.y)
 rectMode(CENTER);
 stroke("red");
-fill(225);
+fill (230,0,0);
 rect(0, 0, this.width, this.height)
 pop();
 

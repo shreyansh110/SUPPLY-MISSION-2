@@ -1,6 +1,6 @@
 var helicopterIMG, helicopterSprite, packageSprite,packageIMG;
 var packageBody,ground
-var box1;
+var box1,box2,box3;
 const Engine = Matter.Engine;
 const World = Matter.World;
 const Bodies = Matter.Bodies;
@@ -18,8 +18,9 @@ function setup() {
 	engine=Engine.create();
 	world=engine.world;
 	
- box1=new Block(200,700,60,10);
-
+ box1=new Block(400,655,140,10);
+box2=new Block(330,620,10,80);
+box3=new Block(470,620,10,80);
 
 	packageSprite=createSprite(width/2, 80, 10,10);
 	packageSprite.addImage(packageIMG)
@@ -45,6 +46,7 @@ function setup() {
  	World.add(world, ground);
 
 
+
 	Engine.run(engine);
   
 }
@@ -55,7 +57,10 @@ function draw() {
   background(0);
   packageSprite.x= packageBody.position.x 
   packageSprite.y= packageBody.position.y 
+ 
   box1.display();
+  box2.display();
+  box3.display();
  keyPressed();
   drawSprites();
 
