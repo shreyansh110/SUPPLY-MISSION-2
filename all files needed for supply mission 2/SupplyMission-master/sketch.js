@@ -22,6 +22,13 @@ function setup() {
 box2=new Block(330,620,10,80);
 box3=new Block(470,620,10,80);
 
+box1sprite=createSprite(400,655,140,10);
+box1sprite.shapeColor=color(237,28,36)
+box2sprite=createSprite(330,620,10,80);
+box2sprite.shapeColor=color(237,28,36)
+box3sprite=createSprite(470,620,10,80);
+box3sprite.shapeColor=color(237,28,36)
+
 	packageSprite=createSprite(width/2, 80, 10,10);
 	packageSprite.addImage(packageIMG)
 	packageSprite.scale=0.2
@@ -58,6 +65,7 @@ function draw() {
   packageSprite.x= packageBody.position.x 
   packageSprite.y= packageBody.position.y 
  
+  packageSprite.collide(box1sprite)
   box1.display();
   box2.display();
   box3.display();
